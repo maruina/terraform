@@ -102,3 +102,6 @@ target/
 
 # dotenv
 .env
+
+# Terraform
+terraform.tfvars
