@@ -17,6 +17,13 @@ resource "digitalocean_record" "tavore" {
     value = "${digitalocean_droplet.tavore.ipv4_address}"
 }
 
+resource "digitalocean_record" "www" {
+    domain = "${digitalocean_domain.matteoruina_com.name}"
+    type = "CNAME"
+    name = "www"
+    value = "${digitalocean_record.tavore.fqdn}."
+}
+
 resource "digitalocean_record" "gmail1" {
     domain = "${digitalocean_domain.matteoruina_com.name}"
     name = "@"
